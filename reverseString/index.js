@@ -4,8 +4,21 @@
 //   reverse('abcd') === 'dcba'
 //   reverse('Hello!') === '!olleH'
 
-function reverse(str) {}
+function reverse(str) {
+  // solution 1
+  //   return reverse().join("");
+  // solution 2
+//   let res = "";
+//   for (let i = 0; i < str.length; i++) {
+//     const chart = str[i];
+//     res = chart + res;
+//   }
+//   return res;
+  // solution 3
+  return str.split("").reduce( (output , char)=> output = char + output , "");
+}
 
+reverse("hello");
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
