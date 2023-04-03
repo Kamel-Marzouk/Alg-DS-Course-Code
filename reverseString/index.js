@@ -6,7 +6,7 @@
 
 function reverse(str) {
   // solution 1
-  //   return reverse().join("");
+  //   return str.split("").reverse().join("");
   // solution 2
 //   let res = "";
 //   for (let i = 0; i < str.length; i++) {
