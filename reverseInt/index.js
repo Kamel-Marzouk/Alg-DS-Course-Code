@@ -7,7 +7,18 @@
 //   reverseInt(-13) === -31
 //   reverseInt(-100) === -1
 
-function reverseInt(n) {}
+function reverseInt(n) {
+  // solution 1
+  // let number = String(Math.abs(n)).split("");
+  // return String(n).includes('-') ? "-" + number.reverse().join("")  : number.reverse().join("");
+  // solution 2
+  let reversed = n.toString().split("").reverse().join("");
+  reversed = parseInt(reversed);
+  return n < 0 ? reversed * -1 : reversed;
+}
+
+// reverseInt Time Complexity o(log n)
+reverseInt(-559659);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
