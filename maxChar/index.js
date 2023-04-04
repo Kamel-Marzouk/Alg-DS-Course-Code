@@ -3,7 +3,26 @@
 // maxChar("I loveeeeeee noodles") === "e"
 // maxChar("1337") === "3"
 
-function maxChar(str) {}
+function maxChar(str) {
+  let charCountObj = {};
+  let maxChar = "";
+  let maxCount = 0;
+  
+  // fill our character count object
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    charCountObj[char] = charCountObj[char] + 1 || 1;
+    if (charCountObj[char] > maxCount) {
+      maxChar = char;
+      maxCount = charCountObj[char];
+    }
+  }
+  return maxChar;
+}
+
+// maxChar Complexity Analysis
+// Time Complexity o(n) we visit every character in input String
+// space Complexity o(1) character count object will have at least 26 key-val pairs
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
