@@ -5,7 +5,30 @@
 //   capitalize("I'm a little tea pot") --> 'I'm A Little Tea Pot'
 //   capitalize('sHoRt AnD sToUt') --> 'Short And Stout'
 
-function capitalize(str) {}
+function capitalize(str) {
+  // solution 1
+  // const arrOfWords = str.split(" ");
+  // for (let i = 0; i < arrOfWords.length; i++) {
+  //   arrOfWords[i] =
+  //     arrOfWords[i].charAt(0).toUpperCase() +
+  //     arrOfWords[i].slice(1).toLowerCase();
+  // }
+  // return arrOfWords.join(" ");
+  // solution 2
+  const arrOfWords = str.split(" ");
+  const arrOfWordsCased = [];
+  for (let i = 0; i < arrOfWords.length; i++) {
+    const word = arrOfWords[i];
+    arrOfWordsCased.push(word[0].toUpperCase() +
+    word.slice(1).toLowerCase())
+  }
+  return arrOfWordsCased.join(" ");
+}
+
+capitalize("hello world");
+
+// capitalize Complexity Analysis
+// Time Complexity o(n)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
