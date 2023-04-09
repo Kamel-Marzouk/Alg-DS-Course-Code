@@ -16,7 +16,28 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  // solution 1
+  // for (let i = 1; i <= n; i++) {
+  //   let step = "";
+
+  //   for (let hash = i; hash > 0; hash--) {
+  //     step += "#";
+  //   }
+  //   for (let space = n - i; space > 0; space--) {
+  //     step += " ";
+  //   }
+  // }
+  // solution 2
+  for (let i = 1; i <= n; i++) {
+    let step = "";
+    step += "#".repeat(i);
+    step += " ".repeat(n - i);
+  }
+}
+
+// steps Complexity Analysis
+// Time Complexity o(n^2) both inner and outer for loops run n times
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
