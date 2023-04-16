@@ -7,7 +7,35 @@
 //   vowels('aEiOu') --> 5
 //   vowels('I am a world-class developer using iterations') --> 16
 
-function vowels(str) {}
+function vowels(str) {
+  //  solution 1
+  // str = str.toLowerCase();
+  // const vowels = ["a", "e", "i", "o", "u"];
+  // let count = 0;
+  // for (let i = 0; i < str.length; i++) {
+  //   const element = str[i];
+  //   if (vowels.includes(element)) count++;
+  // }
+
+  // return count;
+
+  //  solution 2
+  str = str.toLowerCase();
+  const vowels = "auioe".split("");
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    for (let y = 0; y < vowels.length; y++) {
+      const vowel = vowels[y];
+      if (char === vowel) count++;
+    }
+  }
+  return count;
+}
+
+// vowels Complexity Analysis
+// Time Complexity o(n) all characters of input String must be checked to see if it vowel.
+// space Complexity o(1)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
