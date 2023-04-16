@@ -13,7 +13,20 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  for (let i = 1; i <= n; i++) {
+    const padding = " ".repeat(n - i);
+    const hashes = "#".repeat(i * 2 - 1);
+
+    console.log(padding + hashes + padding);
+  }
+}
+
+pyramid(5);
+
+
+// pyramid Complexity Analysis
+// Time Complexity o(n^2) outer loop runs n times, inner loop runs roughly n times
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
