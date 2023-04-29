@@ -33,6 +33,14 @@ class LinkedList {
     this.head = null;
     this.length = 0;
   }
+
+  shift() {
+    if (!this.head) return;
+    const oldHead = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return oldHead;
+  }
 }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
@@ -121,7 +129,7 @@ describe("clear()", () => {
   });
 });
 
-describe.skip("shift()", () => {
+describe("shift()", () => {
   it("removes AND returns first node, updates length for linked list w/ one node.", () => {
     const l = new LinkedList();
     l.unshift(1);
