@@ -19,7 +19,19 @@ function bubbleSort(arr) {
 // Time Complexity : O(N ^ 2) / Quadratic Time Complexity.
 
 //selectionSort works by having sorted data accumulate at start of array
-function selectionSort(arr) {}
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let swapIndex = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[swapIndex]) swapIndex = j;
+    }
+    swap(arr, i, swapIndex);
+  }
+  return arr;
+}
+
+// selectionSort Complexity Analysis
+// Time Complexity : O(N ^ 2) / Quadratic Time Complexity.
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
