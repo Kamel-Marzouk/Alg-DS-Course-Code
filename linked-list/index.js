@@ -81,6 +81,16 @@ class LinkedList {
     node.data = data;
     return true;
   }
+
+  remove(index) {
+    if (!this.get(index)) return false;
+    if (index === 0) return this.shift();
+    const prevNode = this.get(index-1);
+    const nodeToRemove = this.get(index);
+    prevNode.next = prevNode.next.next;
+    this.length--;
+    return nodeToRemove;
+  }
 }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
@@ -271,7 +281,7 @@ describe("set(index, data)", () => {
   });
 });
 
-describe.skip("remove(index)", () => {
+describe("remove(index)", () => {
   it("returns falsy value on out of bounds OR negative index.", () => {
     const l = new LinkedList();
     l.push(2);
